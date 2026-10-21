@@ -176,6 +176,60 @@ kbd.k{font:600 11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line2)
 .compare-table td:not(:first-child){font-weight:600}
 .celestial-note{font-size:11.5px;color:var(--mute);line-height:1.6;margin-top:12px}
 @media(max-width:560px){.compare-grid{grid-template-columns:1fr}.compare-table{font-size:11.5px}.compare-table th,.compare-table td{padding:7px 5px}}
+
+/* ---------- Identité visuelle ME3D : commandes contextuelles ---------- */
+:root{--accent:#82a7ff;--accent2:#a08aff;--scene-glow:#82a7ff}
+.topbar{padding:7px 10px;border:1px solid #ffffff18;border-radius:22px;background:linear-gradient(115deg,#0d111be8,#0a0d14ce);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 16px 44px #0005,inset 0 1px #ffffff0a}
+.brand{padding:5px 8px}
+.scenes{background:#080b12a8;border-color:#ffffff12;box-shadow:inset 0 1px #ffffff08}
+.tab{padding:8px 12px;border-radius:13px}
+.tab.active{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 22%,transparent),color-mix(in srgb,var(--accent2) 16%,transparent));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 25%,transparent);color:#f2f6ff}
+.search input{background:#090d15d9;border-color:#ffffff19}
+.ibtn.active,.dbtn.active{border-color:color-mix(in srgb,var(--accent) 58%,transparent);color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,transparent)}
+.scene-tools{position:absolute;z-index:4;top:calc(82px + env(safe-area-inset-top));left:18px;max-width:calc(100vw - 36px);display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:9px 11px;border-radius:16px;background:linear-gradient(110deg,#0b101ae8,#0a0d15d6);border:1px solid #ffffff17;box-shadow:0 14px 38px #0005,inset 0 1px #ffffff0b;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);animation:pin .2s ease}
+.scene-tools:empty{display:none}
+.st-kicker{display:flex;align-items:center;gap:7px;padding:0 8px 0 3px;color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.st-kicker:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 13px var(--scene-glow)}
+.st-divider{width:1px;height:22px;background:#ffffff19;margin:0 2px}
+.st-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #ffffff15;border-radius:10px;padding:7px 10px;background:#ffffff06;color:#cbd4e5;font-size:11.5px;font-weight:650;white-space:nowrap;cursor:pointer;transition:background .16s,border-color .16s,color .16s,transform .16s}
+.st-btn:hover{background:#ffffff10;border-color:#ffffff2a;color:#fff;transform:translateY(-1px)}
+.st-btn[aria-pressed="true"],.st-btn.active{color:#fff;background:color-mix(in srgb,var(--accent) 18%,#0b1018);border-color:color-mix(in srgb,var(--accent) 42%,transparent)}
+.st-btn.primary{color:#fff;border-color:color-mix(in srgb,var(--accent) 45%,transparent);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 21%,transparent),color-mix(in srgb,var(--accent2) 14%,transparent))}
+.st-mini{color:var(--mute);font-size:10px;white-space:nowrap;padding:0 5px}
+.st-range{display:flex;align-items:center;gap:8px;color:#c8d1e2;font-size:10.5px;white-space:nowrap;padding:0 4px}
+.st-range b{color:#fff;font:700 10px ui-monospace,Menlo,monospace;min-width:33px;text-align:right}
+.st-range input{width:94px;accent-color:var(--accent);cursor:pointer}
+.st-select{max-width:145px;padding:7px 8px;border-radius:9px;background:#0b1018;border:1px solid #ffffff1d;color:var(--ink);font:600 11px inherit}
+.panel{border-color:#ffffff1c;box-shadow:0 28px 80px #0009,inset 0 1px #ffffff09}
+.ph{background:linear-gradient(130deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 72%);border-bottom:1px solid #ffffff0c}
+.kicker{color:var(--accent)}
+.stat{background:linear-gradient(140deg,#ffffff08,#ffffff02);border-color:#ffffff14}
+.pbtn.primary{border-color:color-mix(in srgb,var(--accent) 56%,transparent);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 20%,transparent),color-mix(in srgb,var(--accent2) 15%,transparent))}
+.dock{background:linear-gradient(110deg,#0d111beF,#0a0d15e8);border-color:#ffffff1b;box-shadow:0 18px 50px #0008,inset 0 1px #ffffff0d;backdrop-filter:blur(22px)}
+.dbtn{border-radius:14px}
+.scalechip{border-color:#ffffff1b;background:linear-gradient(120deg,#0c1119e8,#090c13dd);box-shadow:0 12px 30px #0005}
+.pop{border-color:#ffffff1b}
+.results{border-color:#ffffff1c}
+.scene-tools button:focus-visible,.scene-tools input:focus-visible{outline-color:var(--accent)}
+@media(max-width:1180px){.scene-tools{top:calc(82px + env(safe-area-inset-top))}}
+@media(max-width:860px){
+ .topbar{border-radius:18px;padding:6px 8px;left:10px;right:10px}
+ .scene-tools{top:calc(142px + env(safe-area-inset-top));left:10px;max-width:calc(100vw - 20px);right:10px;padding:8px;gap:5px;border-radius:14px}
+ .st-kicker{width:100%;padding-bottom:3px}
+ .st-range{flex:1;justify-content:space-between}
+ .st-range input{width:min(25vw,120px)}
+ .st-btn{padding:7px 8px;font-size:10.5px}
+ .panel{z-index:6}
+}
+@media(max-width:560px){
+ .scene-tools{top:calc(150px + env(safe-area-inset-top));max-height:98px;overflow:auto;align-content:flex-start}
+ .st-kicker{font-size:8px}
+ .st-divider{height:18px}
+ .st-btn{font-size:10px;padding:6px 7px}
+ .st-range{font-size:9.5px}
+ .st-range input{width:68px}
+}
+
 </style></head>
 <body><div id="app">
 <div id="loading"><i></i><span>Chargement des données NASA…</span></div>
@@ -201,6 +255,8 @@ kbd.k{font:600 11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line2)
     <button class="ibtn glass" id="fsBtn" aria-label="Plein écran" title="Plein écran (F)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button>
   </div>
 </header>
+
+<div class="scene-tools glass" id="sceneTools" role="toolbar" aria-label="Outils de la scène active"></div>
 
 <aside class="panel" id="panel" aria-live="polite">
   <div class="ph">
@@ -955,15 +1011,15 @@ function boot(imgs){
     go(id){ const s=this.scenes.get(id); if(!s) return;
       if(s.status!=='ready'){ openRoadmap(id); return; }
       if(this.current!==id){ const c=this.scenes.get(this.current); c&&c.exit&&c.exit(); this.current=id; s.enter&&s.enter(); }
-      renderTabs(); syncUI(); if($('layersPop').classList.contains('open')) renderLayers(); } };
+      renderTabs(); syncUI(); renderSceneTools(); if($('layersPop').classList.contains('open')) renderLayers(); } };
   App.registerScene({id:'earth',name:'Terre',icon:ICON.earth,status:'ready'});
   App.registerScene({id:'solar',name:'Système solaire',icon:ICON.solar,status:'ready'});
   App.registerScene({id:'sky',name:'Ciel',icon:ICON.sky,status:'ready',
     tagline:'Le ciel étoilé, tel qu\'on le voit depuis n\'importe quel point de la Terre.',
-    features:['Sélection de 16 étoiles brillantes avec fiches indicatives','Traits de repère schématiques entre certaines étoiles','Recherche et sélection des étoiles représentées','Zoom et rotation de la voûte céleste','Données et distances arrondies clairement signalées']});
+    features:['Catalogue de plus de 40 étoiles repères avec magnitude et coordonnées','Constellations et traits de repère organisés par figures','Grille équatoriale activable et bande de Voie lactée schématique','Filtre de magnitude pour alléger ou enrichir la voûte','Recherche et centrage des étoiles sélectionnables']});
   App.registerScene({id:'galaxy',name:'Galaxie',icon:ICON.galaxy,status:'ready',
     tagline:'La Voie lactée, puis les galaxies voisines.',
-    features:['Structure spirale procédurale à quatre bras','Repère du voisinage solaire et du bras d’Orion','Centre galactique Sagittarius A* comme point de repère','Andromède et Grand Nuage de Magellan représentés schématiquement','Échelle visuelle compressée, non métrique']});
+    features:['Disque spiralé procédural à quatre bras et bulbe central','Couches de poussière et halo stellaire séparables','Modes de vue de dessus, de profil et perspective','Repères pour le voisinage solaire, les bras, amas et nébuleuses','Galaxies voisines visibles à échelle compressée et annoncée comme schématique']});
 
   /* ----- Scène Ciel : voûte stellaire interactive -----
      Les étoiles de repère sont placées à des coordonnées équatoriales approximatives.
@@ -986,7 +1042,35 @@ function boot(imgs){
     {id:'procyon',name:'Procyon',ra:7.655,dec:5.225,mag:0.34,distance:'≈ 11,5 années-lumière',kind:'Système stellaire proche',color:0xffe3b5},
     {id:'aldebaran',name:'Aldébaran',ra:4.5987,dec:16.5093,mag:0.85,distance:'≈ 65 années-lumière',kind:'Géante orange',color:0xffbd7b},
     {id:'regulus',name:'Régulus',ra:10.1395,dec:11.9672,mag:1.35,distance:'≈ 79 années-lumière',kind:'Système stellaire multiple',color:0xcbdcff},
-    {id:'fomalhaut',name:'Fomalhaut',ra:22.9608,dec:-29.6222,mag:1.16,distance:'≈ 25 années-lumière',kind:'Étoile blanche',color:0xd2e2ff}
+    {id:'fomalhaut',name:'Fomalhaut',ra:22.9608,dec:-29.6222,mag:1.16,distance:'≈ 25 années-lumière',kind:'Étoile blanche',color:0xd2e2ff},
+    {id:'dubhe',name:'Dubhé',ra:11.0621,dec:61.7508,mag:1.79,distance:'≈ 123 années-lumière',kind:'Géante orange',color:0xffc58d},
+    {id:'merak',name:'Mérak',ra:11.0307,dec:56.3824,mag:2.37,distance:'≈ 80 années-lumière',kind:'Étoile blanche',color:0xcbdfff},
+    {id:'phecda',name:'Phecda',ra:11.8972,dec:53.6948,mag:2.44,distance:'≈ 84 années-lumière',kind:'Étoile blanche',color:0xd2e3ff},
+    {id:'megrez',name:'Megrez',ra:12.257,dec:57.0326,mag:3.31,distance:'≈ 80 années-lumière',kind:'Étoile blanche',color:0xcbdfff},
+    {id:'alioth',name:'Alioth',ra:12.9005,dec:55.9598,mag:1.77,distance:'≈ 83 années-lumière',kind:'Étoile blanche',color:0xd7e6ff},
+    {id:'mizar',name:'Mizar',ra:13.3987,dec:54.9254,mag:2.23,distance:'≈ 83 années-lumière',kind:'Système stellaire multiple',color:0xcbdfff},
+    {id:'alkaid',name:'Alkaïd',ra:13.7923,dec:49.3133,mag:1.86,distance:'≈ 104 années-lumière',kind:'Étoile bleue-blanche',color:0xb5d6ff},
+    {id:'bellatrix',name:'Bellatrix',ra:5.4189,dec:6.3497,mag:1.64,distance:'≈ 250 années-lumière',kind:'Géante bleue',color:0xa6cfff},
+    {id:'saiph',name:'Saïph',ra:5.7959,dec:-9.6696,mag:2.06,distance:'≈ 650 années-lumière',kind:'Supergéante bleue',color:0xa8ceff},
+    {id:'mintaka',name:'Mintaka',ra:5.5334,dec:-0.2991,mag:2.25,distance:'≈ 1 200 années-lumière',kind:'Système stellaire multiple',color:0xb5d6ff},
+    {id:'alnilam',name:'Alnilam',ra:5.6036,dec:-1.2019,mag:1.69,distance:'≈ 2 000 années-lumière',kind:'Supergéante bleue',color:0xa8ceff},
+    {id:'alnitak',name:'Alnitak',ra:5.6793,dec:-1.9426,mag:1.74,distance:'≈ 1 200 années-lumière',kind:'Système stellaire multiple',color:0xa8ceff},
+    {id:'schedar',name:'Schedar',ra:0.6751,dec:56.5373,mag:2.24,distance:'≈ 230 années-lumière',kind:'Géante orange',color:0xffc58d},
+    {id:'caph',name:'Caph',ra:0.153,dec:59.1498,mag:2.28,distance:'≈ 55 années-lumière',kind:'Étoile blanche',color:0xd5e4ff},
+    {id:'gamma-cas',name:'Gamma Cassiopée',ra:0.9451,dec:60.7167,mag:2.47,distance:'≈ 550 années-lumière',kind:'Étoile chaude variable',color:0xb3d4ff},
+    {id:'ruchbah',name:'Ruchbah',ra:1.4303,dec:60.2353,mag:2.68,distance:'≈ 90 années-lumière',kind:'Étoile blanche',color:0xd5e4ff},
+    {id:'egin',name:'Segin',ra:1.9066,dec:63.67,mag:3.35,distance:'≈ 440 années-lumière',kind:'Étoile bleue-blanche',color:0xb5d6ff},
+    {id:'sadr',name:'Sadr',ra:20.3705,dec:40.2567,mag:2.23,distance:'≈ 1 800 années-lumière',kind:'Supergéante blanche-jaune',color:0xffe1b1},
+    {id:'albireo',name:'Albireo',ra:19.512,dec:27.9597,mag:3.18,distance:'≈ 430 années-lumière',kind:'Étoile double colorée',color:0xffcc8e},
+    {id:'gienah',name:'Gienah',ra:20.7702,dec:33.9703,mag:2.46,distance:'≈ 150 années-lumière',kind:'Géante bleue-blanche',color:0xc4d9ff},
+    {id:'castor',name:'Castor',ra:7.5767,dec:31.8883,mag:1.58,distance:'≈ 51 années-lumière',kind:'Système stellaire multiple',color:0xcbdfff},
+    {id:'pollux',name:'Pollux',ra:7.7553,dec:28.0262,mag:1.14,distance:'≈ 34 années-lumière',kind:'Géante orange',color:0xffbe85},
+    {id:'markab',name:'Markab',ra:23.0793,dec:15.2053,mag:2.49,distance:'≈ 130 années-lumière',kind:'Étoile bleue-blanche',color:0xcbdfff},
+    {id:'scheat',name:'Schéat',ra:23.0629,dec:28.0828,mag:2.42,distance:'≈ 200 années-lumière',kind:'Géante rouge',color:0xffa07c},
+    {id:'algenib',name:'Algenib',ra:0.2206,dec:15.1836,mag:2.83,distance:'≈ 390 années-lumière',kind:'Étoile chaude',color:0xb4d3ff},
+    {id:'alpheratz',name:'Alphératz',ra:0.1398,dec:29.0904,mag:2.06,distance:'≈ 97 années-lumière',kind:'Système stellaire',color:0xcbdfff},
+    {id:'mirfak',name:'Mirfak',ra:3.4054,dec:49.8612,mag:1.79,distance:'≈ 590 années-lumière',kind:'Supergéante jaune-blanche',color:0xffe0ad},
+    {id:'algol',name:'Algol',ra:3.1361,dec:40.9556,mag:2.12,distance:'≈ 93 années-lumière',kind:'Système binaire à éclipses',color:0xcbdfff}
   ];
   const skyVec=(ra,dec,r=76)=>{ const a=ra*15*DEG,d=dec*DEG; return new THREE.Vector3(-r*Math.cos(d)*Math.cos(a),r*Math.sin(d),-r*Math.cos(d)*Math.sin(a)); };
   const skyStarMap=new Map(), skyLabelMap=new Map();
@@ -995,11 +1079,11 @@ function boot(imgs){
     const rnd=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
     for(let i=0;i<N;i++){ const z=2*rnd()-1,a=rnd()*Math.PI*2,r=86,xy=Math.sqrt(1-z*z),b=0.55+rnd()*0.45; pos[3*i]=r*xy*Math.cos(a);pos[3*i+1]=r*z;pos[3*i+2]=r*xy*Math.sin(a);const warm=rnd()<.2;colors[3*i]=b*(warm?1:.72);colors[3*i+1]=b*(warm?.82:.84);colors[3*i+2]=b*(warm?.64:1); }
     g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(colors,3));
-    skyGroup.add(new THREE.Points(g,new THREE.PointsMaterial({size:.48,sizeAttenuation:false,vertexColors:true,transparent:true,opacity:.92,depthWrite:false})));
+    const skyBackgroundPoints=new THREE.Points(g,new THREE.PointsMaterial({size:.48,sizeAttenuation:false,vertexColors:true,transparent:true,opacity:.92,depthWrite:false}));skyGroup.add(skyBackgroundPoints);
   }
   skyStarDefs.forEach((d,i)=>{
     d.position=skyVec(d.ra,d.dec); d.object=new THREE.Mesh(new THREE.SphereGeometry(.12+Math.max(0,1.5-d.mag)*.055,12,10),new THREE.MeshBasicMaterial({color:d.color}));
-    d.object.position.copy(d.position);d.object.userData.celestialId=d.id;skyGroup.add(d.object);skyStarMap.set(d.id,d);
+    d.object.position.copy(d.position);d.object.userData.celestialId=d.id;skyGroup.add(d.object);d.glow=new THREE.Sprite(new THREE.SpriteMaterial({map:sunGlowTex,color:d.color,transparent:true,opacity:.2,blending:THREE.AdditiveBlending,depthWrite:false}));d.glow.position.copy(d.position);d.glow.scale.set(.7+Math.max(0,1.5-d.mag)*.35,.7+Math.max(0,1.5-d.mag)*.35,1);skyGroup.add(d.glow);skyStarMap.set(d.id,d);
     d.labelEl=document.createElement('div');d.labelEl.className='plabel';d.labelEl.textContent=d.name;d.labelEl.style.display='none';solarLabels.appendChild(d.labelEl);skyLabelMap.set(d.id,d.labelEl);
   });
   const constellationEdges={
@@ -1010,16 +1094,34 @@ function boot(imgs){
   };
   // Les lignes ne sont tracées qu'entre étoiles présentes dans le petit jeu de repères, pour rester honnêtes sur sa portée.
   const skyLines=new THREE.Group(); skyGroup.add(skyLines);
-  const visibleEdges=[['betelgeuse','rigel'],['vega','deneb'],['vega','altair'],['altair','deneb'],['aldebaran','capella'],['sirius','procyon'],['arcturus','spica']];
-  { const pts=[];visibleEdges.forEach(([a,b])=>{const A=skyStarMap.get(a),B=skyStarMap.get(b);if(A&&B)pts.push(A.position,B.position);});const geo=new THREE.BufferGeometry().setFromPoints(pts);skyLines.add(new THREE.LineSegments(geo,new THREE.LineBasicMaterial({color:0x718abf,transparent:true,opacity:.42,depthWrite:false}))); }
-  const Sky={fov:58,selected:null,flags:{constellations:true,labels:true},
-    setFov(v){this.fov=Math.max(28,Math.min(86,v));camera.fov=this.fov;camera.updateProjectionMatrix();},
-    reset(){skyGroup.rotation.set(0,0,0);this.selected=null;this.setFov(58);camera.near=.1;camera.far=180;camera.position.set(0,0,.01);camera.lookAt(0,0,-1);camera.updateProjectionMatrix();},
+  const constellationDefs={
+    'Grande Ourse':{color:0x85b7ff,edges:[['dubhe','merak'],['merak','phecda'],['phecda','megrez'],['megrez','dubhe'],['megrez','alioth'],['alioth','mizar'],['mizar','alkaid']]},
+    'Orion':{color:0x83e1f2,edges:[['betelgeuse','bellatrix'],['bellatrix','mintaka'],['mintaka','alnilam'],['alnilam','alnitak'],['alnitak','saiph'],['saiph','rigel'],['rigel','mintaka'],['betelgeuse','alnitak']]},
+    'Cassiopée':{color:0xc5a5ff,edges:[['caph','schedar'],['schedar','gamma-cas'],['gamma-cas','ruchbah'],['ruchbah','egin']]},
+    'Triangle d’été':{color:0x91d8ff,edges:[['vega','deneb'],['deneb','altair'],['altair','vega']]},
+    'Gémeaux':{color:0xffd2a0,edges:[['castor','pollux']]},
+    'Pégase':{color:0xb7c6ff,edges:[['alpheratz','markab'],['markab','scheat'],['scheat','algenib'],['algenib','alpheratz']]},
+    'Repères brillants':{color:0xffb9a0,edges:[['arcturus','spica'],['aldebaran','capella'],['sirius','procyon']]},
+    'Cygne':{color:0x9ed8ff,edges:[['deneb','sadr'],['sadr','albireo'],['deneb','gienah'],['gienah','albireo']]}
+  };
+  const constellationLineObjects=[];
+  Object.entries(constellationDefs).forEach(([name,def])=>{const pts=[];def.edges.forEach(([a,b])=>{const A=skyStarMap.get(a),B=skyStarMap.get(b);if(A&&B)pts.push(A.position,B.position);});if(pts.length){const geo=new THREE.BufferGeometry().setFromPoints(pts),line=new THREE.LineSegments(geo,new THREE.LineBasicMaterial({color:def.color,transparent:true,opacity:.5,depthWrite:false}));line.userData.constellation=name;skyLines.add(line);constellationLineObjects.push(line);}});
+  const skyGrid=new THREE.Group();skyGrid.visible=false;skyGroup.add(skyGrid);
+  const gridMat=new THREE.LineBasicMaterial({color:0x5d85b5,transparent:true,opacity:.19,depthWrite:false});
+  for(let dec=-60;dec<=60;dec+=30){const pts=[];for(let ra=0;ra<=24.001;ra+=.25)pts.push(skyVec(ra,dec,82));const geo=new THREE.BufferGeometry().setFromPoints(pts);skyGrid.add(new THREE.LineLoop(geo,gridMat));}
+  for(let ra=0;ra<24;ra+=2){const pts=[];for(let dec=-89;dec<=89;dec+=2)pts.push(skyVec(ra,dec,82));const geo=new THREE.BufferGeometry().setFromPoints(pts);skyGrid.add(new THREE.Line(geo,gridMat));}
+  const skyMilkyWay=new THREE.Group();skyMilkyWay.visible=true;skyGroup.add(skyMilkyWay);
+  {const N=2600,g=new THREE.BufferGeometry(),pos=new Float32Array(N*3),col=new Float32Array(N*3);let seed=118213;const rnd=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};for(let i=0;i<N;i++){const a=rnd()*Math.PI*2,y=(rnd()+rnd()+rnd()-1.5)*4.4,r=83+Math.sin(a*5)*.6;pos[3*i]=Math.cos(a)*Math.sqrt(Math.max(1,r*r-y*y));pos[3*i+1]=y;pos[3*i+2]=Math.sin(a)*Math.sqrt(Math.max(1,r*r-y*y));const q=rnd();col[3*i]=.38+q*.16;col[3*i+1]=.45+q*.2;col[3*i+2]=.65+q*.27;}g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));skyMilkyWay.add(new THREE.Points(g,new THREE.PointsMaterial({size:.72,sizeAttenuation:false,vertexColors:true,transparent:true,opacity:.4,depthWrite:false})));}
+  const Sky={fov:58,selected:null,limitMag:3.5,flags:{constellations:true,labels:true,grid:false,milkyWay:true},
+    setFov(v){this.fov=Math.max(24,Math.min(88,v));camera.fov=this.fov;camera.updateProjectionMatrix();},
+    setLimitMag(v){const n=Number(v);this.limitMag=Math.max(-1.5,Math.min(4,Number.isFinite(n)?n:3.5));skyStarDefs.forEach(d=>{const visible=d.mag<=this.limitMag||d===this.selected;d.object.visible=visible;d.glow.visible=visible;});if(this.selected&&!this.selected.object.visible)this.selected=null;this.updateLabels();},
+    focus(d){this.selected=d;if(!d)return;skyGroup.updateMatrixWorld(true);const p=d.object.getWorldPosition(new THREE.Vector3());camera.position.set(0,0,0);camera.lookAt(p);camera.updateMatrixWorld(true);},
+    reset(){skyGroup.rotation.set(0,0,0);this.selected=null;this.setFov(58);this.setLimitMag(this.limitMag);camera.near=.1;camera.far=180;camera.position.set(0,0,.01);camera.lookAt(0,0,-1);camera.updateProjectionMatrix();},
     update(){this.updateLabels();},
     updateLabels(){const visible=[];skyStarDefs.forEach(d=>{const w=d.object.getWorldPosition(new THREE.Vector3()).project(camera);const x=(w.x*.5+.5)*innerWidth,y=(-w.y*.5+.5)*innerHeight;const el=d.labelEl;if(!this.flags.labels||!d.object.visible||w.z< -1||w.z>1||w.x< -1.1||w.x>1.1||w.y< -1.1||w.y>1.1){el.style.display='none';return;}visible.push({d,el,x,y,clip:w.z});});
       const placed=[];visible.sort((a,b)=>(a.d===this.selected?-1:0)-(b.d===this.selected?-1:0));visible.forEach(v=>{const w=v.d.name.length*7+20,r=[v.x-w/2,v.y-36,v.x+w/2,v.y-4];if(v.d!==this.selected&&placed.some(q=>r[0]<q[2]&&r[2]>q[0]&&r[1]<q[3]&&r[3]>q[1])){v.el.style.display='none';return;}placed.push(r);v.el.style.display='block';v.el.style.left=v.x+'px';v.el.style.top=v.y+'px';v.el.classList.toggle('sel',v.d===this.selected);});},
     pick(x,y){let best=null,bd=22;skyStarDefs.forEach(d=>{const v=d.object.getWorldPosition(new THREE.Vector3()).project(camera);if(v.z< -1||v.z>1)return;const sx=(v.x*.5+.5)*innerWidth,sy=(-v.y*.5+.5)*innerHeight,dist=Math.hypot(sx-x,sy-y);if(dist<bd){bd=dist;best=d;}});return best;},
-    search(q){const n=norm(q);return skyStarDefs.filter(d=>norm(d.name).includes(n)||d.id.includes(n)).slice(0,8).map(d=>({label:d.name,sub:d.kind,kind:'Étoile',color:'#b9d2ff',run:()=>{if(App.current!=='sky')App.go('sky');showSkyStar(d);}}));}
+    search(q){const n=norm(q);return skyStarDefs.filter(d=>norm(d.name).includes(n)||d.id.includes(n)||norm(d.kind).includes(n)).slice(0,8).map(d=>({label:d.name,sub:d.kind,kind:'Étoile',color:'#88dfff',run:()=>{if(App.current!=='sky')App.go('sky');Sky.setLimitMag(Math.max(Sky.limitMag,d.mag));showSkyStar(d);}}));}
   };
 
   /* ----- Scène Galaxie : Voie lactée procédurale et repères locaux -----
@@ -1036,6 +1138,11 @@ function boot(imgs){
     }
     galaxyArmPoints.geometry.setAttribute('position',new THREE.BufferAttribute(pos,3));galaxyArmPoints.geometry.setAttribute('color',new THREE.BufferAttribute(col,3));galaxyGroup.add(galaxyArmPoints);
   }
+  const galaxyDustPoints=new THREE.Points(new THREE.BufferGeometry(),new THREE.PointsMaterial({size:.62,sizeAttenuation:true,color:0x38324d,transparent:true,opacity:.56,depthWrite:false}));
+  {const N=3100,pos=new Float32Array(N*3);let seed=438122;const rnd=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};for(let i=0;i<N;i++){const r=.7+Math.pow(rnd(),.7)*23,arm=Math.floor(rnd()*4),ang=arm*Math.PI/2+r*.28+(rnd()-.5)*.28+.18;pos[3*i]=Math.cos(ang)*r;pos[3*i+1]=Math.sin(ang)*r*.76;pos[3*i+2]=(rnd()-.5)*(.9+2.0*Math.exp(-r/10));}galaxyDustPoints.geometry.setAttribute('position',new THREE.BufferAttribute(pos,3));galaxyGroup.add(galaxyDustPoints);}
+  const galaxyHaloPoints=new THREE.Points(new THREE.BufferGeometry(),new THREE.PointsMaterial({size:.18,sizeAttenuation:true,color:0x91a9d9,transparent:true,opacity:.34,depthWrite:false}));
+  {const N=1850,pos=new Float32Array(N*3);let seed=827351;const rnd=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};for(let i=0;i<N;i++){const u=rnd()*2-1,a=rnd()*Math.PI*2,r=25+Math.pow(rnd(),.65)*19,q=Math.sqrt(1-u*u);pos[3*i]=Math.cos(a)*q*r;pos[3*i+1]=Math.sin(a)*q*r*.75;pos[3*i+2]=u*r*.34;}galaxyHaloPoints.geometry.setAttribute('position',new THREE.BufferAttribute(pos,3));galaxyGroup.add(galaxyHaloPoints);}
+  const galaxyBulgeRing=new THREE.Mesh(new THREE.TorusGeometry(3.5,.12,8,100),new THREE.MeshBasicMaterial({color:0xffc28c,transparent:true,opacity:.22,depthWrite:false}));galaxyGroup.add(galaxyBulgeRing);
   const galaxyCore=new THREE.Sprite(new THREE.SpriteMaterial({map:sunGlowTex,color:0xffd4a0,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false}));galaxyCore.position.set(0,0,0);galaxyCore.scale.set(10,10,1);galaxyGroup.add(galaxyCore);
   galaxyGroup.add(new THREE.Mesh(new THREE.SphereGeometry(.72,24,18),new THREE.MeshBasicMaterial({color:0xffdeb0})));
   const galaxyItems=[];
@@ -1045,13 +1152,21 @@ function boot(imgs){
   addGalaxyMarker('orion-arm','Bras d’Orion','Bras spiral','Région locale du disque galactique où se trouve le Système solaire ; la structure affichée est schématique.',new THREE.Vector3(13.5,-3.8,.05),0x7ed5ff,.25);
   addGalaxyMarker('andromeda','Galaxie d’Andromède','Galaxie voisine','Galaxie spirale voisine de la Voie lactée. Sa position dans cette scène est illustrative : les distances intergalactiques ne sont pas à l’échelle du disque.',new THREE.Vector3(-28,18,-3),0xb7c9ff,.72);
   addGalaxyMarker('large-magellanic-cloud','Grand Nuage de Magellan','Galaxie satellite','Petite galaxie satellite de la Voie lactée, représentée comme repère extérieur.',new THREE.Vector3(5,-25,-2),0xffb7a1,.42);
-  const Galaxy={distance:56,targetDistance:56,selected:null,flags:{labels:true,arms:true,markers:true},
-    reset(){galaxyGroup.rotation.set(.22,-.18,0);this.distance=this.targetDistance=56;this.selected=null;camera.near=.1;camera.far=3000;camera.fov=50;camera.position.set(0,2,56);camera.lookAt(0,0,0);camera.updateProjectionMatrix();},
-    zoomBy(f){this.targetDistance=Math.max(25,Math.min(130,this.targetDistance*f));},
-    drag(dx,dy){galaxyGroup.rotation.y+=dx*.004;galaxyGroup.rotation.x=Math.max(-1.15,Math.min(1.15,galaxyGroup.rotation.x+dy*.004));},
-    update(dt){this.distance+=(this.targetDistance-this.distance)*(1-Math.exp(-dt*5));camera.position.set(0,2,this.distance);camera.lookAt(0,0,0);this.updateLabels();},
+  addGalaxyMarker('perseus-arm','Bras de Persée','Bras spiral','Bras externe majeur de la Voie lactée ; sa position exacte est représentée de manière schématique.',new THREE.Vector3(-13,11,-.25),0x9ec6ff,.25);
+  addGalaxyMarker('scutum-centaurus-arm','Bras Écu-Centaure','Bras spiral','Bras riche en étoiles et régions de formation stellaire, placé ici comme repère pédagogique.',new THREE.Vector3(5,12,.1),0xffb88d,.25);
+  addGalaxyMarker('pleiades','Amas des Pléiades','Amas ouvert','Amas ouvert connu dans le voisinage galactique. Son emplacement et sa taille sont compressés dans cette représentation.',new THREE.Vector3(17,8,.35),0x9ed5ff,.3);
+  addGalaxyMarker('orion-nebula','Nébuleuse d’Orion','Nébuleuse','Région de formation stellaire située dans notre région galactique locale ; repère illustratif.',new THREE.Vector3(14.4,-4.3,.15),0xffb4c8,.28);
+  addGalaxyMarker('omega-centauri','Omega Centauri','Amas globulaire','Grand amas globulaire de la Voie lactée, représenté comme point de repère et non à l’échelle.',new THREE.Vector3(3,-14,1.4),0xffd4a0,.3);
+  addGalaxyMarker('cygnus-x','Cygnus X','Région de formation stellaire','Complexe de formation d’étoiles dans la région du Cygne, placé schématiquement dans le disque galactique.',new THREE.Vector3(9.5,2.8,.2),0x91dcff,.25);
+  const Galaxy={distance:56,targetDistance:56,selected:null,focusTarget:null,viewMode:'perspective',flags:{labels:true,arms:true,markers:true,dust:true,halo:true,core:true},
+    reset(){galaxyGroup.rotation.set(.22,-.18,0);this.viewMode='perspective';this.distance=this.targetDistance=56;this.selected=null;this.focusTarget=null;camera.near=.1;camera.far=3000;camera.fov=50;camera.position.set(0,2,56);camera.lookAt(0,0,0);camera.updateProjectionMatrix();},
+    setView(mode){this.viewMode=mode;if(mode==='top'){galaxyGroup.rotation.set(0,0,0);}else if(mode==='edge'){galaxyGroup.rotation.set(1.28,-.08,0);}else{galaxyGroup.rotation.set(.22,-.18,0);}this.selected=null;this.focusTarget=null;},
+    focus(d){this.selected=d;this.focusTarget=d?d.position.clone():null;if(d)this.targetDistance=Math.min(this.targetDistance,34);},
+    zoomBy(f){this.targetDistance=Math.max(8,Math.min(145,this.targetDistance*f));},
+    drag(dx,dy){galaxyGroup.rotation.y+=dx*.004;galaxyGroup.rotation.x=Math.max(-1.45,Math.min(1.45,galaxyGroup.rotation.x+dy*.004));this.viewMode='custom';},
+    update(dt){this.distance+=(this.targetDistance-this.distance)*(1-Math.exp(-dt*5));galaxyGroup.updateMatrixWorld(true);const target=this.focusTarget?galaxyGroup.localToWorld(this.focusTarget.clone()):new THREE.Vector3(0,0,0);camera.position.set(target.x,target.y+1.5,target.z+this.distance);camera.lookAt(target);camera.updateMatrixWorld(true);this.updateLabels();},
     updateLabels(){const visible=[];galaxyItems.forEach(d=>{const v=d.object.getWorldPosition(new THREE.Vector3()).project(camera),x=(v.x*.5+.5)*innerWidth,y=(-v.y*.5+.5)*innerHeight;const show=this.flags.labels&&d.object.visible&&v.z>=-1&&v.z<=1&&Math.abs(v.x)<1.2&&Math.abs(v.y)<1.2;if(show)visible.push({d,x,y});else d.labelEl.style.display='none';});const placed=[];visible.sort((a,b)=>(a.d===this.selected?-1:0)-(b.d===this.selected?-1:0));visible.forEach(v=>{const w=v.d.name.length*7+20,r=[v.x-w/2,v.y-36,v.x+w/2,v.y-4];if(v.d!==this.selected&&placed.some(q=>r[0]<q[2]&&r[2]>q[0]&&r[1]<q[3]&&r[3]>q[1])){v.d.labelEl.style.display='none';return;}placed.push(r);v.d.labelEl.style.display='block';v.d.labelEl.style.left=v.x+'px';v.d.labelEl.style.top=v.y+'px';v.d.labelEl.classList.toggle('sel',v.d===this.selected);});},
-    pick(x,y){let best=null,bd=26;galaxyItems.forEach(d=>{const v=d.object.getWorldPosition(new THREE.Vector3()).project(camera);if(v.z< -1||v.z>1)return;const dist=Math.hypot((v.x*.5+.5)*innerWidth-x,(-v.y*.5+.5)*innerHeight-y);if(dist<bd){bd=dist;best=d;}});return best;},
+    pick(x,y){let best=null,bd=26;galaxyItems.forEach(d=>{if(!d.object.visible)return;const v=d.object.getWorldPosition(new THREE.Vector3()).project(camera);if(v.z< -1||v.z>1)return;const dist=Math.hypot((v.x*.5+.5)*innerWidth-x,(-v.y*.5+.5)*innerHeight-y);if(dist<bd){bd=dist;best=d;}});return best;},
     search(q){const n=norm(q);return galaxyItems.filter(d=>norm(d.name).includes(n)||norm(d.category).includes(n)).map(d=>({label:d.name,sub:d.category,kind:'Galaxie',color:'#c5b7ff',run:()=>{if(App.current!=='galaxy')App.go('galaxy');showGalaxyItem(d);}}));}
   };
 
@@ -1114,6 +1229,7 @@ function boot(imgs){
     $('night').classList.toggle('active',nightView||Settings.lighting==='realtime');
     $('layersBtn').classList.toggle('active',$('layersPop').classList.contains('open'));
     $('layersPop').querySelectorAll('input[data-layer]').forEach(i=>{ i.checked=!!Layers.state[i.dataset.layer]; });
+    if(typeof renderSceneTools==='function'&&$('sceneTools'))renderSceneTools();
   }
   function toggleLayersPop(force){ const p=$('layersPop'), open=force===undefined?!p.classList.contains('open'):force; if(open){ closeModal(); renderLayers(); } p.classList.toggle('open',open); syncUI(); }
   $('layersBtn').onclick=e=>{ e.stopPropagation(); toggleLayersPop(); };
@@ -1148,8 +1264,8 @@ function boot(imgs){
   $('mbody').addEventListener('change',e=>{ const k=e.target.dataset&&e.target.dataset.set; if(k){ Settings[k]=e.target.checked; saveSettings(); } });
   function openHelp(){
     openModal('<h2>À propos de ME3D</h2><p class="lead">Explore le Système solaire, la Terre, une sélection d’étoiles brillantes et une représentation conceptuelle de la Voie lactée. Le Ciel et la Galaxie sont des scènes interactives, avec certaines données schématiques indiquées dans leurs fiches.</p>'+
-      '<h4>Navigation</h4><div class="keys"><kbd class="k">Glisser</kbd><span>Faire pivoter le monde actif</span><kbd class="k">Molette</kbd><span>Zoomer progressivement</span><kbd class="k">Clic</kbd><span>Sélectionner une planète, une lune ou un objet céleste</span><kbd class="k">/</kbd><span>Rechercher (ou Ctrl/⌘ + K)</span><kbd class="k">R</kbd><span>Vue d’ensemble</span><kbd class="k">L</kbd><span>Afficher ou masquer les noms</span><kbd class="k">O</kbd><span>Afficher ou masquer les orbites dans le Système solaire</span><kbd class="k">E</kbd><span>Basculer l’espacement compact / étendu</span><kbd class="k">B</kbd><span>Frontières dans la scène Terre</span><kbd class="k">N</kbd><span>Jour / nuit dans la scène Terre</span><kbd class="k">C</kbd><span>Calques</span><kbd class="k">S</kbd><span>Réglages</span><kbd class="k">F</kbd><span>Plein écran</span><kbd class="k">Espace</kbd><span>Pause du temps</span><kbd class="k">+ −</kbd><span>Zoomer / dézoomer</span><kbd class="k">Échap</kbd><span>Fermer</span></div>'+
-      '<h4>Limites des scènes Ciel et Galaxie</h4><p class="credits">La scène Ciel présente une sélection de 16 étoiles repères et un petit tracé de lignes de constellations, non les 88 constellations officielles. Les positions des étoiles sont indicatives et certaines distances sont arrondies. La scène Galaxie est une visualisation procédurale à échelle comprimée : elle illustre la forme générale du disque et des bras, mais ne constitue pas une carte galactique mesurée.</p><h4>Lire les orbites</h4><p class="credits">Les trajectoires planétaires sont calculées à partir d’éléments orbitaux képlériens publiés par le JPL. Un croisement apparent à l’écran peut venir de la projection 2D : il ne signifie pas que les trajectoires se touchent en 3D. Les orbites de Vénus et de la Terre restent séparées radialement. Les distances et les tailles sont compressées ; le bouton d’échelle modifie encore l’espacement des planètes externes. La Lune terrestre utilise les principaux termes de la série de Meeus. Les 20 autres lunes suivent des trajectoires circulaires visuelles simplifiées à partir de leurs périodes et distances moyennes.</p>'+
+      '<h4>Navigation</h4><div class="keys"><kbd class="k">Glisser</kbd><span>Faire pivoter le monde actif</span><kbd class="k">Molette</kbd><span>Zoomer progressivement</span><kbd class="k">Clic</kbd><span>Sélectionner une planète, une lune ou un objet céleste</span><kbd class="k">/</kbd><span>Rechercher (ou Ctrl/⌘ + K)</span><kbd class="k">R</kbd><span>Vue d’ensemble</span><kbd class="k">L</kbd><span>Afficher ou masquer les noms</span><kbd class="k">O</kbd><span>Orbites du Système solaire ou figures célestes</span><kbd class="k">E</kbd><span>Basculer l’espacement compact / étendu</span><kbd class="k">Glisser</kbd><span>Orienter le Ciel ou la Galaxie</span><kbd class="k">B</kbd><span>Frontières dans la scène Terre</span><kbd class="k">N</kbd><span>Jour / nuit dans la scène Terre</span><kbd class="k">C</kbd><span>Calques</span><kbd class="k">S</kbd><span>Réglages</span><kbd class="k">F</kbd><span>Plein écran</span><kbd class="k">Espace</kbd><span>Pause du temps</span><kbd class="k">+ −</kbd><span>Zoomer / dézoomer</span><kbd class="k">Échap</kbd><span>Fermer</span></div>'+
+      '<h4>Limites des scènes Ciel et Galaxie</h4><p class="credits">La scène Ciel propose un catalogue pédagogique réduit de plus de 40 étoiles nommées, une sélection de figures et une grille équatoriale. Ce n’est pas encore un atlas astrométrique exhaustif ; les magnitudes et distances affichées sont indicatives, et la bande de Voie lactée est schématique. La scène Galaxie associe un champ stellaire procédural à des repères de régions, amas et galaxies. Ses couches de poussière, son halo et ses distances sont visuels, non mesurés ; ils servent à explorer la structure générale, pas à lire une carte galactique à l’échelle.</p><h4>Lire les orbites</h4><p class="credits">Les trajectoires planétaires sont calculées à partir d’éléments orbitaux képlériens publiés par le JPL. Un croisement apparent à l’écran peut venir de la projection 2D : il ne signifie pas que les trajectoires se touchent en 3D. Les orbites de Vénus et de la Terre restent séparées radialement. Les distances et les tailles sont compressées ; le bouton d’échelle modifie encore l’espacement des planètes externes. La Lune terrestre utilise les principaux termes de la série de Meeus. Les 20 autres lunes suivent des trajectoires circulaires visuelles simplifiées à partir de leurs périodes et distances moyennes.</p>'+
       '<h4>Données et rendu</h4><p class="credits">Positions planétaires : <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html" target="_blank" rel="noopener">JPL — Approximate Positions of the Planets</a> · Textures de la Terre et calques géographiques : composites et données embarqués dans le projet · Textures des satellites secondaires : textures procédurales ME3D · Orientation des corps : éléments IAU · Rendu 3D : three.js. Les tailles et distances ne sont pas toutes à l’échelle.</p>');
   }
   $('settingsBtn').onclick=e=>{ e.stopPropagation(); openSettings(); };
@@ -1381,10 +1497,10 @@ function boot(imgs){
   };
 
   /* ----- Monde « Système solaire » : fiches, calques, hooks ----- */
-  function renderSkyPanel(){showInfo({eyebrow:'ME3D · Ciel',title:'Voûte céleste',sub:'Repères d’étoiles brillantes autour de l’observateur',stats:[{label:'Étoiles repérées',value:String(skyStarDefs.length)},{label:'Constellations reliées',value:'Schématiques'},{label:'Champ visuel',value:Math.round(Sky.fov)+'°'},{label:'Date simulée',value:fmtDate(Clock.t)}],chips:['Fond étoilé procédural','Coordonnées indicatives · catalogue réduit'],actions:[{label:Sky.flags.constellations?'Masquer les constellations':'Afficher les constellations',primary:true,fn:()=>Layers.set('skyconstellations',!Sky.flags.constellations)},{label:'Aide et limites des données',fn:openHelp}]});}
-  function showSkyStar(d){Sky.selected=d;showInfo({eyebrow:'Étoile · '+d.kind,title:d.name,sub:'Repère céleste dans ME3D',stats:[{label:'Type',value:d.kind},{label:'Distance estimée',value:d.distance},{label:'Magnitude apparente',value:String(d.mag)},{label:'Ascension droite',value:d.ra.toFixed(3)+' h'},{label:'Déclinaison',value:(d.dec>=0?'+':'')+d.dec.toFixed(3)+'°'}],chips:['Repère de navigation, non un catalogue astrométrique exhaustif'],actions:[{label:'Vue du ciel',primary:true,fn:()=>{Sky.selected=d;}}]});}
-  function renderGalaxyPanel(){showInfo({eyebrow:'ME3D · Galaxie',title:'Voie lactée',sub:'Vue conceptuelle de notre galaxie et de son voisinage',stats:[{label:'Bras spiraux dessinés',value:'4'},{label:'Étoiles procédurales',value:'8 200'},{label:'Repères',value:String(galaxyItems.length)},{label:'Distance de caméra',value:Math.round(Galaxy.distance)+' unités visuelles'}],chips:['Structure générée procéduralement','Distances intergalactiques compressées'],actions:[{label:'Comparer les corps planétaires',primary:true,fn:()=>{App.go('solar');openCompareModal('earth');}},{label:'À propos de la représentation',fn:openHelp}]});}
-  function showGalaxyItem(d){Galaxy.selected=d;showInfo({eyebrow:d.category,title:d.name,sub:'Repère galactique',stats:[{label:'Objet',value:d.category},{label:'Localisation',value:d.id==='sagittarius-a'?'Centre galactique':d.id==='solar-neighborhood'?'Disque galactique local':'Voisinage de la Voie lactée'}],chips:[d.description,'Position et distances schématiques'],actions:[{label:'Vue d’ensemble',primary:true,fn:()=>{Galaxy.reset();renderGalaxyPanel();}}]});}
+  function renderSkyPanel(){showInfo({eyebrow:'ME3D · Ciel',title:'Atlas du ciel',sub:'Étoiles brillantes, figures et repères célestes',stats:[{label:'Étoiles nommées',value:String(skyStarDefs.length)},{label:'Figures reliées',value:String(Object.keys(constellationDefs).length)},{label:'Magnitude limite',value:Sky.limitMag.toFixed(1)+' mag'},{label:'Champ visuel',value:Math.round(Sky.fov)+'°'}],chips:['Grille équatoriale optionnelle','Bande galactique schématique · catalogue partiel'],actions:[{label:Sky.flags.constellations?'Masquer les figures':'Afficher les figures',primary:true,fn:()=>Layers.set('skyconstellations',!Sky.flags.constellations)},{label:'Ouvrir les calques',fn:()=>toggleLayersPop(true)},{label:'Limites des données',fn:openHelp}]});}
+  function showSkyStar(d){Sky.setLimitMag(Math.max(Sky.limitMag,d.mag));Sky.focus(d);showInfo({eyebrow:'Étoile · '+d.kind,title:d.name,sub:'Repère céleste dans ME3D',stats:[{label:'Type',value:d.kind},{label:'Distance estimée',value:d.distance},{label:'Magnitude apparente',value:String(d.mag)},{label:'Ascension droite',value:d.ra.toFixed(3)+' h'},{label:'Déclinaison',value:(d.dec>=0?'+':'')+d.dec.toFixed(3)+'°'}],chips:['Étoiles repères : positions et distances indicatives, catalogue partiel'],actions:[{label:'Retour à la voûte',primary:true,fn:()=>{Sky.reset();renderSkyPanel();}}]});}
+  function renderGalaxyPanel(){showInfo({eyebrow:'ME3D · Galaxie',title:'Voie lactée',sub:'Explorer le disque, le bulbe et le voisinage galactique',stats:[{label:'Étoiles procédurales',value:'8 200'},{label:'Repères nommés',value:String(galaxyItems.length)},{label:'Vue active',value:Galaxy.viewMode==='top'?'Dessus':Galaxy.viewMode==='edge'?'Profil':Galaxy.viewMode==='custom'?'Personnalisée':'Perspective'},{label:'Zoom visuel',value:Math.round(Galaxy.distance)+' unités'}],chips:['Poussières et halo séparés par calques','Distances et positions schématiques, non métriques'],actions:[{label:'Vue de dessus',fn:()=>{Galaxy.setView('top');renderGalaxyPanel();}},{label:'Vue de profil',fn:()=>{Galaxy.setView('edge');renderGalaxyPanel();}},{label:'Ouvrir les calques',primary:true,fn:()=>toggleLayersPop(true)},{label:'À propos des données',fn:openHelp}]});}
+  function showGalaxyItem(d){Galaxy.focus(d);showInfo({eyebrow:d.category,title:d.name,sub:'Repère sélectionné dans la Voie lactée',stats:[{label:'Catégorie',value:d.category},{label:'Repère',value:d.id==='sagittarius-a'?'Centre galactique':d.id==='solar-neighborhood'?'Voisinage solaire':d.id.includes('arm')?'Structure spiralée':'Objet du voisinage galactique'},{label:'État de la vue',value:'Centrage progressif'}],chips:[d.description,'Localisations et distances compressées pour la navigation'],actions:[{label:'Vue d’ensemble',primary:true,fn:()=>{Galaxy.reset();renderGalaxyPanel();}},{label:'Ouvrir les calques',fn:()=>toggleLayersPop(true)}]});}
   function updateGalaxyLabels(){Galaxy.updateLabels();}
 
   const fmtDay=ms=>fmtDate(ms);
@@ -1454,11 +1570,57 @@ function boot(imgs){
   Layers.add({scene:'solar',id:'belt',group:'Système solaire',label:'Ceinture d’astéroïdes',desc:'Répartition illustrative entre Mars et Jupiter',def:true,set:v=>Solar.setFlag('belt',v)});
   Layers.add({scene:'solar',id:'smoon',group:'Satellites',label:'Lunes principales (21)',desc:'Lune terrestre calculée ; autres satellites à orbites simplifiées',def:true,set:v=>Solar.setFlag('moons',v)});
   Layers.add({scene:'solar',id:'sstars',group:'Espace',label:'Étoiles',desc:'Fond étoilé',def:true,set:v=>{ if(App.current==='solar'&&stars) stars.visible=v; }});
-  Layers.add({scene:'sky',id:'skyconstellations',group:'Ciel',label:'Traits de repère',desc:'Connexions simplifiées entre quelques étoiles brillantes',def:true,set:v=>{Sky.flags.constellations=v;skyLines.visible=v;}});
-  Layers.add({scene:'sky',id:'skylabels',group:'Ciel',label:'Noms des étoiles',desc:'Afficher les noms des étoiles repères',def:true,set:v=>{Sky.flags.labels=v;}});
+  Layers.add({scene:'sky',id:'skyconstellations',group:'Ciel',label:'Constellations et figures',desc:'Tracés colorés de figures célestes simplifiées',def:true,set:v=>{Sky.flags.constellations=v;skyLines.visible=v;}});
+  Layers.add({scene:'sky',id:'skylabels',group:'Ciel',label:'Noms des étoiles',desc:'Étiquettes des étoiles nommées',def:true,set:v=>{Sky.flags.labels=v;}});
+  Layers.add({scene:'sky',id:'skygrid',group:'Ciel',label:'Grille équatoriale',desc:'Repères d’ascension droite et de déclinaison',def:false,set:v=>{Sky.flags.grid=v;skyGrid.visible=v;}});
+  Layers.add({scene:'sky',id:'skymilkyway',group:'Ciel',label:'Bande de la Voie lactée',desc:'Champ diffus schématique dans la voûte céleste',def:true,set:v=>{Sky.flags.milkyWay=v;skyMilkyWay.visible=v;}});
   Layers.add({scene:'galaxy',id:'galaxyarms',group:'Galaxie',label:'Bras spiraux',desc:'Structure stellaire procédurale',def:true,set:v=>{Galaxy.flags.arms=v;galaxyArmPoints.visible=v;}});
-  Layers.add({scene:'galaxy',id:'galaxylabels',group:'Galaxie',label:'Noms des repères',desc:'Soleil, bras d’Orion, centre et galaxies voisines',def:true,set:v=>{Galaxy.flags.labels=v;}});
-  Layers.add({scene:'galaxy',id:'galaxyobjects',group:'Galaxie',label:'Repères galactiques',desc:'Afficher les objets sélectionnables',def:true,set:v=>{Galaxy.flags.markers=v;galaxyItems.forEach(d=>d.object.visible=v);}});
+  Layers.add({scene:'galaxy',id:'galaxydust',group:'Galaxie',label:'Voies de poussière',desc:'Couche sombre schématique le long des bras',def:true,set:v=>{Galaxy.flags.dust=v;galaxyDustPoints.visible=v;}});
+  Layers.add({scene:'galaxy',id:'galaxyhalo',group:'Galaxie',label:'Halo stellaire',desc:'Étoiles extérieures diffusées autour du disque',def:true,set:v=>{Galaxy.flags.halo=v;galaxyHaloPoints.visible=v;}});
+  Layers.add({scene:'galaxy',id:'galaxycore',group:'Galaxie',label:'Bulbe central',desc:'Lueur et repère lumineux du centre galactique',def:true,set:v=>{Galaxy.flags.core=v;galaxyCore.visible=v;galaxyBulgeRing.visible=v;}});
+  Layers.add({scene:'galaxy',id:'galaxylabels',group:'Galaxie',label:'Noms des repères',desc:'Régions, amas, nébuleuses et galaxies voisines',def:true,set:v=>{Galaxy.flags.labels=v;}});
+  Layers.add({scene:'galaxy',id:'galaxyobjects',group:'Galaxie',label:'Objets sélectionnables',desc:'Amas, régions locales et galaxies voisines',def:true,set:v=>{Galaxy.flags.markers=v;galaxyItems.forEach(d=>d.object.visible=v);}});
+
+  /* ----- Barre d’outils contextuelle ME3D ----- */
+  function renderSceneTools(){
+    const root=$('sceneTools');if(!root)return;
+    const themes={earth:['#69dcb4','#77b9df'],solar:['#82a7ff','#ad8fff'],sky:['#73dcff','#a2b7ff'],galaxy:['#c5a0ff','#f29bda']};
+    const colors=themes[App.current]||themes.solar;
+    document.documentElement.style.setProperty('--accent',colors[0]);document.documentElement.style.setProperty('--accent2',colors[1]);document.documentElement.style.setProperty('--scene-glow',colors[0]);
+    root.dataset.scene=App.current;
+    const btn=(id,label,pressed=false,extra='')=>'<button type="button" class="st-btn'+(pressed?' active':'')+(extra==='primary'?' primary':'')+'" data-tool="'+id+'" aria-pressed="'+(pressed?'true':'false')+'" '+(extra&&extra!=='primary'?extra:'')+'>'+label+'</button>';
+    const divider='<span class="st-divider" aria-hidden="true"></span>';
+    if(App.current==='sky'){
+      root.innerHTML='<span class="st-kicker">ME3D · Atlas céleste</span>'+btn('sky-constellations','Figures',!!Sky.flags.constellations)+btn('sky-grid','Grille équatoriale',!!Sky.flags.grid)+btn('sky-milkyway','Voie lactée',!!Sky.flags.milkyWay)+divider+'<label class="st-range" for="skyMagnitude"><span>Magnitude limite</span><input id="skyMagnitude" data-tool-range="sky-magnitude" type="range" min="-1.5" max="4" step="0.5" value="'+Sky.limitMag+'" aria-label="Magnitude limite des étoiles nommées"><b>'+Sky.limitMag.toFixed(1)+' mag</b></label>'+btn('sky-reset','Réinitialiser la vue');
+    }else if(App.current==='galaxy'){
+      root.innerHTML='<span class="st-kicker">ME3D · Cartographie galactique</span><span class="st-mini">Vue</span>'+btn('galaxy-view-top','Dessus',Galaxy.viewMode==='top')+btn('galaxy-view-perspective','Perspective',Galaxy.viewMode==='perspective')+btn('galaxy-view-edge','Profil',Galaxy.viewMode==='edge')+divider+btn('galaxy-arms','Bras',!!Galaxy.flags.arms)+btn('galaxy-dust','Poussières',!!Galaxy.flags.dust)+btn('galaxy-halo','Halo',!!Galaxy.flags.halo)+btn('galaxy-core','Bulbe',!!Galaxy.flags.core)+btn('galaxy-labels','Noms',!!Galaxy.flags.labels)+btn('galaxy-objects','Repères',!!Galaxy.flags.markers);
+    }else if(App.current==='solar'){
+      root.innerHTML='<span class="st-kicker">ME3D · Système solaire</span><span class="st-mini">Vue orbitale · horloge simulée</span>'+btn('solar-compare','Comparer deux mondes',false,'primary')+btn('solar-scale','Échelle '+(VIS.mode==='extended'?'étendue':'compacte'),VIS.mode==='extended')+btn('scene-layers','Calques');
+    }else{
+      root.innerHTML='<span class="st-kicker">ME3D · Surface planétaire</span><span class="st-mini">Globe 3D · relief, atmosphère et nuages</span>'+btn('earth-layers','Calques')+btn('earth-moon','Lune',!!Layers.state.moon)+btn('earth-night','Jour / nuit',nightView);
+    }
+  }
+  $('sceneTools').addEventListener('click',e=>{
+    const b=e.target.closest('[data-tool]');if(!b)return;const a=b.dataset.tool;
+    if(a==='sky-constellations')Layers.toggle('skyconstellations');
+    else if(a==='sky-grid')Layers.toggle('skygrid');
+    else if(a==='sky-milkyway')Layers.toggle('skymilkyway');
+    else if(a==='sky-reset'){Sky.reset();renderSkyPanel();}
+    else if(a==='galaxy-view-top'||a==='galaxy-view-perspective'||a==='galaxy-view-edge'){Galaxy.setView(a.endsWith('top')?'top':a.endsWith('edge')?'edge':'perspective');renderGalaxyPanel();}
+    else if(a==='galaxy-arms')Layers.toggle('galaxyarms');
+    else if(a==='galaxy-dust')Layers.toggle('galaxydust');
+    else if(a==='galaxy-halo')Layers.toggle('galaxyhalo');
+    else if(a==='galaxy-core')Layers.toggle('galaxycore');
+    else if(a==='galaxy-labels')Layers.toggle('galaxylabels');
+    else if(a==='galaxy-objects')Layers.toggle('galaxyobjects');
+    else if(a==='solar-compare')openCompareModal('earth');
+    else if(a==='solar-scale')$('scaleBtn').click();
+    else if(a==='scene-layers'||a==='earth-layers')toggleLayersPop(true);
+    else if(a==='earth-moon')Layers.toggle('moon');
+    else if(a==='earth-night')$('night').click();
+    syncUI();
+  });
+  $('sceneTools').addEventListener('input',e=>{if(e.target.matches('[data-tool-range="sky-magnitude"]')){Sky.setLimitMag(e.target.value);const v=e.target.parentElement.querySelector('b');if(v)v.textContent=Number(e.target.value).toFixed(1)+' mag';}});
 
   function setEarthVisible(v){
     tiltGroup.visible=v; atmoOuter.visible=v&&!!Layers.state.atmosphere; atmoInner.visible=v&&!!Layers.state.atmosphere;
@@ -1468,20 +1630,20 @@ function boot(imgs){
   }
   const earthScene=App.scenes.get('earth'), solarScene=App.scenes.get('solar'), skyScene=App.scenes.get('sky'), galaxyScene=App.scenes.get('galaxy');
   function restoreRealtimeClock(){if(Clock.auto&&Clock.si===4){Clock.si=0;Clock.speed=1;Clock.auto=false;updateTimeUI();}}
-  earthScene.enter=()=>{ setEarthVisible(true); camera.near=.1;camera.far=200;camera.fov=48;camera.position.set(0,0,distance);camera.lookAt(0,0,0);camera.updateProjectionMatrix(); $('scalechip').querySelector('small').textContent='Altitude';
+  earthScene.enter=()=>{ setEarthVisible(true); camera.near=.1;camera.far=200;camera.fov=48;camera.position.set(0,0,distance);camera.lookAt(0,0,0);camera.updateProjectionMatrix(); $('scalechip').querySelector('small').textContent='Altitude';$('timebar').style.display='';$('scalechip').style.display='';
     restoreRealtimeClock(); $('panel').classList.remove('open'); setHash(selected?'earth/'+encodeURIComponent(selected.name):'earth'); };
   earthScene.exit=()=>{ setEarthVisible(false); };
   solarScene.enter=()=>{ if(Clock.speed===1&&!Clock.paused){ Clock.si=4; Clock.speed=Clock.speeds[4]; Clock.auto=true; updateTimeUI(); toast('Vitesse : 1 jour / s'); }
-    skyGroup.visible=false;galaxyGroup.visible=false;ambient.intensity=0.10;Solar.enter();if(stars)stars.visible=!!Layers.state.sstars;$('scalechip').querySelector('small').textContent='Cible';renderSolarPanel();setHash('solar'); };
+    skyGroup.visible=false;galaxyGroup.visible=false;ambient.intensity=0.10;Solar.enter();if(stars)stars.visible=!!Layers.state.sstars;$('scalechip').querySelector('small').textContent='Cible';$('timebar').style.display='';$('scalechip').style.display='';renderSolarPanel();setHash('solar'); };
   solarScene.exit=()=>{ Solar.exit(); };
   solarScene.update=(dt)=>{ Solar.update(dt,Clock.t); };
-  skyScene.enter=()=>{Solar.group.visible=false;galaxyGroup.visible=false;skyGroup.visible=true;setEarthVisible(false);if(stars)stars.visible=false;Solar.list.forEach(b=>b.el.style.display='none');skyStarDefs.forEach(d=>d.labelEl.style.display='none');galaxyItems.forEach(d=>d.labelEl.style.display='none');solarLabels.style.display='block';ambient.intensity=.22;sun.intensity=0;hemi.intensity=0;Sky.reset();$('scalechip').querySelector('small').textContent='Champ visuel';restoreRealtimeClock();renderSkyPanel();setHash('sky');};
+  skyScene.enter=()=>{Solar.group.visible=false;galaxyGroup.visible=false;skyGroup.visible=true;setEarthVisible(false);if(stars)stars.visible=false;Solar.list.forEach(b=>b.el.style.display='none');skyStarDefs.forEach(d=>d.labelEl.style.display='none');galaxyItems.forEach(d=>d.labelEl.style.display='none');solarLabels.style.display='block';ambient.intensity=.22;sun.intensity=0;hemi.intensity=0;Sky.reset();skyLines.visible=!!Layers.state.skyconstellations;skyGrid.visible=!!Layers.state.skygrid;skyMilkyWay.visible=!!Layers.state.skymilkyway;$('scalechip').querySelector('small').textContent='Champ visuel';$('timebar').style.display='none';$('scalechip').style.display='';restoreRealtimeClock();renderSkyPanel();setHash('sky');};
   skyScene.exit=()=>{skyGroup.visible=false;skyStarDefs.forEach(d=>d.labelEl.style.display='none');skyLines.visible=!!Sky.flags.constellations;};
   skyScene.update=()=>{Sky.update();};
-  galaxyScene.enter=()=>{Solar.group.visible=false;skyGroup.visible=false;galaxyGroup.visible=true;setEarthVisible(false);if(stars)stars.visible=false;Solar.list.forEach(b=>b.el.style.display='none');skyStarDefs.forEach(d=>d.labelEl.style.display='none');galaxyItems.forEach(d=>d.labelEl.style.display='none');solarLabels.style.display='block';ambient.intensity=.18;sun.intensity=0;hemi.intensity=0;Galaxy.reset();$('scalechip').querySelector('small').textContent='Échelle visuelle';restoreRealtimeClock();renderGalaxyPanel();setHash('galaxy');};
+  galaxyScene.enter=()=>{Solar.group.visible=false;skyGroup.visible=false;galaxyGroup.visible=true;setEarthVisible(false);if(stars)stars.visible=false;Solar.list.forEach(b=>b.el.style.display='none');skyStarDefs.forEach(d=>d.labelEl.style.display='none');galaxyItems.forEach(d=>d.labelEl.style.display='none');solarLabels.style.display='block';ambient.intensity=.18;sun.intensity=0;hemi.intensity=0;Galaxy.reset();galaxyArmPoints.visible=!!Layers.state.galaxyarms;galaxyDustPoints.visible=!!Layers.state.galaxydust;galaxyHaloPoints.visible=!!Layers.state.galaxyhalo;galaxyCore.visible=!!Layers.state.galaxycore;galaxyBulgeRing.visible=!!Layers.state.galaxycore;galaxyItems.forEach(d=>d.object.visible=!!Layers.state.galaxyobjects);$('scalechip').querySelector('small').textContent='Échelle visuelle';$('timebar').style.display='none';$('scalechip').style.display='';restoreRealtimeClock();renderGalaxyPanel();setHash('galaxy');};
   galaxyScene.exit=()=>{galaxyGroup.visible=false;galaxyItems.forEach(d=>d.labelEl.style.display='none');};
   galaxyScene.update=dt=>Galaxy.update(dt);
-  setEarthVisible(false); Solar.group.visible=false; solarScene.enter(); renderTabs(); syncUI(); $('panel').classList.remove('open');
+  setEarthVisible(false); Solar.group.visible=false; solarScene.enter(); renderTabs(); syncUI(); renderSceneTools(); $('panel').classList.remove('open');
 
   /* ----- Raccourcis clavier ----- */
   addEventListener('keydown',e=>{
