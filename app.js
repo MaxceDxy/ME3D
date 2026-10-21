@@ -898,17 +898,10 @@ function boot(imgs){
   };
 
   function renderTabs(){
-    const descriptions={earth:'Géographie & relief',solar:'Planètes & orbites',sky:'Atlas stellaire',galaxy:'Structure galactique'};
-    $('scenes').innerHTML=[...App.scenes.values()].map((s,i)=>
-      '<button class="tab'+(s.id===App.current?' active':'')+'" role="tab" aria-selected="'+(s.id===App.current)+'" data-scene="'+s.id+'" title="'+esc(s.status==='ready'?s.name:s.name+' — bientôt')+'">'+
-      '<span class="tab-index">'+String(i+1).padStart(2,'0')+'</span>'+s.icon+'<span class="tab-copy"><span class="tab-name">'+esc(s.name)+'</span><small class="tab-description">'+esc(descriptions[s.id]||'Monde à explorer')+'</small></span><span class="tab-arrow" aria-hidden="true">↗</span>'+(s.status!=='ready'?'<em class="badge">Bientôt</em>':'')+'</button>').join('');
-    const current=App.scenes.get(App.current);
-    const label=current?current.name:'Exploration';
-    const activeLabel=$('navActiveLabel');if(activeLabel)activeLabel.textContent=label;
-    document.body.dataset.scene=App.current;
-    $('app').dataset.scene=App.current;
+    $('scenes').innerHTML=[...App.scenes.values()].map(s=>
+      '<button class="tab'+(s.id===App.current?' active':'')+'" role="tab" aria-selected="'+(s.id===App.current)+'" data-scene="'+s.id+'" title="'+esc(s.status==='ready'?s.name:s.name+' — bientôt')+'">'+s.icon+'<span>'+esc(s.name)+'</span>'+(s.status!=='ready'?'<em class="badge">Bientôt</em>':'')+'</button>').join('');
   }
-  $('scenes').addEventListener('click',e=>{ const b=e.target.closest('[data-scene]'); if(b){App.go(b.dataset.scene);if(matchMedia('(max-width: 1100px)').matches)setMenuOpen(false);} });
+  $('scenes').addEventListener('click',e=>{ const b=e.target.closest('[data-scene]'); if(b) App.go(b.dataset.scene); });
   renderTabs();
 
   /* ----- Fenêtres modales ----- */
@@ -1002,16 +995,6 @@ function boot(imgs){
       '<h4>Limites des scènes Ciel et Galaxie</h4><p class="credits">La scène Ciel propose un catalogue pédagogique réduit de plus de 40 étoiles nommées, une sélection de figures et une grille équatoriale. Ce n’est pas encore un atlas astrométrique exhaustif ; les magnitudes et distances affichées sont indicatives, et la bande de Voie lactée est schématique. La scène Galaxie associe un champ stellaire procédural à des repères de régions, amas et galaxies. Ses couches de poussière, son halo et ses distances sont visuels, non mesurés ; ils servent à explorer la structure générale, pas à lire une carte galactique à l’échelle.</p><h4>Lire les orbites</h4><p class="credits">Les trajectoires planétaires sont calculées à partir d’éléments orbitaux képlériens publiés par le JPL. Un croisement apparent à l’écran peut venir de la projection 2D : il ne signifie pas que les trajectoires se touchent en 3D. Les orbites de Vénus et de la Terre restent séparées radialement. Les distances et les tailles sont compressées ; le bouton d’échelle modifie encore l’espacement des planètes externes. La Lune terrestre utilise les principaux termes de la série de Meeus. Les 20 autres lunes suivent des trajectoires circulaires visuelles simplifiées à partir de leurs périodes et distances moyennes.</p>'+
       '<h4>Données et rendu</h4><p class="credits">Positions planétaires : <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html" target="_blank" rel="noopener">JPL — Approximate Positions of the Planets</a> · Textures de la Terre et calques géographiques : composites et données embarqués dans le projet · Textures des satellites secondaires : textures procédurales ME3D · Orientation des corps : éléments IAU · Rendu 3D : three.js. Les tailles et distances ne sont pas toutes à l’échelle.</p>');
   }
-  function setMenuOpen(open){
-    document.body.classList.toggle('menu-open',!!open);
-    const toggle=$('menuToggle');if(toggle){toggle.setAttribute('aria-expanded',String(!!open));toggle.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');}
-    const scrim=$('sidebarScrim');if(scrim)scrim.setAttribute('aria-hidden',String(!open));
-  }
-  $('menuToggle').onclick=()=>setMenuOpen(!document.body.classList.contains('menu-open'));
-  $('sidebarScrim').onclick=()=>setMenuOpen(false);
-  $('sideTours').onclick=()=>{setMenuOpen(false);openTourPicker();};
-  $('sideFavorites').onclick=()=>{setMenuOpen(false);openFavorites();};
-  $('sideHelp').onclick=()=>{setMenuOpen(false);openHelp();};
   $('settingsBtn').onclick=e=>{ e.stopPropagation(); openSettings(); };
   $('helpBtn').onclick=e=>{ e.stopPropagation(); openHelp(); };
   $('fsBtn').onclick=()=>{ const d=document; if(d.fullscreenElement){ d.exitFullscreen&&d.exitFullscreen(); } else if(d.documentElement.requestFullscreen){ d.documentElement.requestFullscreen().catch(()=>{}); } else toast('Plein écran indisponible'); };
@@ -1449,7 +1432,7 @@ function boot(imgs){
   /* ----- Barre d’outils contextuelle ME3D ----- */
   function renderSceneTools(){
     const root=$('sceneTools');if(!root)return;
-    const themes={earth:['#e6ad70','#a5c7bc'],solar:['#e6ad70','#a5c7bc'],sky:['#e6ad70','#a5c7bc'],galaxy:['#e6ad70','#a5c7bc']};
+    const themes={earth:['#69dcb4','#77b9df'],solar:['#82a7ff','#ad8fff'],sky:['#73dcff','#a2b7ff'],galaxy:['#c5a0ff','#f29bda']};
     const colors=themes[App.current]||themes.solar;
     document.documentElement.style.setProperty('--accent',colors[0]);document.documentElement.style.setProperty('--accent2',colors[1]);document.documentElement.style.setProperty('--scene-glow',colors[0]);
     root.dataset.scene=App.current;
@@ -1518,7 +1501,7 @@ function boot(imgs){
     const typing=e.target&&e.target.tagName==='INPUT'&&e.target.type!=='checkbox';
     if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){ e.preventDefault(); closeModal(); sIn.focus(); sIn.select(); return; }
     if(typing) return;
-    if(e.key==='Escape'){ if(document.body.classList.contains('menu-open')) setMenuOpen(false); else if($('modal').classList.contains('open')) closeModal(); else if($('layersPop').classList.contains('open')) toggleLayersPop(false); else if(selected) deselect(); else $('panel').classList.remove('open'); return; }
+    if(e.key==='Escape'){ if($('modal').classList.contains('open')) closeModal(); else if($('layersPop').classList.contains('open')) toggleLayersPop(false); else if(selected) deselect(); else $('panel').classList.remove('open'); return; }
     if($('modal').classList.contains('open')||e.altKey||e.ctrlKey||e.metaKey) return;
     const k=e.key.toLowerCase();
     if(k==='r') resetView(); else if(k==='l') $('labels').click(); else if(k==='o') $('orbitsBtn').click(); else if(k==='e') $('scaleBtn').click();
